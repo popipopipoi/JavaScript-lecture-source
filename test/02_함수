@@ -1,0 +1,84 @@
+// 2-1. min, max function
+
+var num1 = 10;
+var num2 = 20;
+
+console.log('최소값 : ' + Math.min(num1, num2));
+console.log('최대값 : ' + Math.max(num1, num2));
+
+  // 코드 작성
+  console.log("최소값 : " + min(num1, num2));
+  console.log("최대값 : " + max(num1, num2));
+
+  function min(a, b) {
+    /*
+    if (a < b) {
+      return a;
+    } else {
+      return b;
+    }
+    */
+    return a < b ? a : b;
+  }
+
+  function max(a, b) {
+    /*
+    if (a > b) {
+      return a;
+    } else {
+      return b;
+    }
+    */
+    return a > b ? a : b;
+  }
+
+// 2-2. pow function
+
+var x = 2;
+var n = -1;
+if(n>0) {
+    console.log(Math.pow(x,n));
+} else {
+    console.log(n+'은 양의 정수이어야 합니다.')
+}
+
+// 코드 작성
+if (n < 1) {
+    console.log(n + '은 양의 정수이어야 합니다.');
+  } else {
+    console.log(pow(x, n));
+  }
+
+  function pow(x, n) {
+    var result = x;
+
+    for (var i = 1; i < n; i++) {
+      result *= x;
+    }
+
+    return result;
+  }
+
+// 2-3. min, max function 화살표 함수
+var a = 10;
+var b = 20;
+
+result = () => { return Math.max(a,b); }
+result1 = () => { return Math.min(a,b); }
+
+console.log('최대값 : ' + result());
+console.log('최소값 : ' + result1());
+
+// 삼항 연산자
+var result2 = (a > b) ? a : b;
+console.log('최대값 : ' + result2);
+
+var result3 = (a < b) ? a : b;
+console.log('최소값 : ' + result3);
+
+// 코드 작성
+var getMin = (a, b) => a < b ? a : b;
+var getMax = (a, b) => a > b ? a : b;
+
+console.log("최소값 : " + getMin(a, b));
+console.log("최대값 : " + getMax(a, b));
