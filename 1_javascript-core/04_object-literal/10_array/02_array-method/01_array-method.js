@@ -48,9 +48,9 @@ const chickenList = ['양념치킨', '후라이드', '파닭'];
 
 console.log(`unshift 전 chickenList : ${chickenList}`);         // 양념치킨,후라이드,파닭
 
-// chickenList.unshift('간장치킨');
-// chickenList.unshift('마늘치킨');
-chickenList.unshift('간장치킨', '마늘치킨');
+chickenList.unshift('간장치킨');
+chickenList.unshift('마늘치킨');
+//chickenList.unshift('간장치킨', '마늘치킨');
 
 console.log(`unshift 후 chickenList : ${chickenList}`);         // 마늘치킨,간장치킨,양념치킨,후라이드,파닭
 
