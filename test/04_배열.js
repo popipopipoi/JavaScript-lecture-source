@@ -42,22 +42,57 @@ function filterRange(arr, a, b) {
   
   console.log(arr);
 
+  // 선생님답
+  function filterRange(arr, a, b) {
+    // 코드 작성
+      arr.forEach((item, index) => {
+          if (item < a || item > b) {
+              arr.splice(index, 1);
+          }
+      });
+  }
+  
+
 // 3. 제시 된 숫자값 배열과 문자값 배열을 오름차순 정렬, 내림차순 정렬하여 출력한다.
 
 let numbers = [20, 100, 37, 54, 88, 9];
 let strings = ['wow', 'js', 'party', 'hello'];
 
-function compare(a, b) {
-    if(a > b) return 1;    
-    if(a == b) return 0;   
-    if(a < b) return -1; 
+// function compare(a, b) {
+//     if(a > b) return 1;    
+//     if(a == b) return 0;   
+//     if(a < b) return -1; 
 
-}
-console.log(numbers.sort(compare));
+// }
+
+
+console.log(numbers.sort((a, b) => a - b));
 console.log(numbers.sort((a, b) => b - a));
 
 console.log(strings.sort());
 console.log(strings.sort(function(a, b){ return b.localeCompare(a)}));
+
+// 선생님 답
+// 코드 작성
+// 숫자 오름차순
+numbers.sort((a, b) => a - b);           
+console.log(numbers);
+// 숫자 내림차순
+numbers.sort((a, b) => b - a);
+// numbers.reverse(); - 역순 처리도 가능
+console.log(numbers);
+
+// 문자 오름차순
+strings.sort();
+console.log(strings);
+// 문자 내림차순
+strings.sort(function (a, b) {
+  if(a > b) return -1;
+  if(a == b) return 0;
+  if(a < b) return 1;
+});
+// strings.reverse(); - 역순 처리도 가능
+console.log(strings);
 
 
 // 4. Student 생성자 함수를 통해 생성 된 3명의 학생 객체를 studentList 배열에 담았다. 
@@ -82,10 +117,15 @@ function Student(firstName, lastName, score){
   console.log(makeFullName(studentList));
   
   function sortFromScore (arr) {
-        item => item.score 
-  }
+        
+        arr.sort((a , b) => b.score - a.score);
+}
+  
   
   function makeFullName(arr){
-    // 코드 작성
+    return arr.map(user => ({ 
+        name : user.lastName + user.firstName,
+        score : user.score })
+    );
   }
 
