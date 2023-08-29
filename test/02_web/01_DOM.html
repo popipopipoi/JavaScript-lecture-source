@@ -87,10 +87,12 @@
     <script>
         function calculator(value) {
             // 코드 작성
-            let first = parseFloat(document.getElementById('num1').value);
-            let second = parseFloat(document.getElementById('num2').value);
+            // let first = parseFloat(document.getElementById('num1').value);
+            // let second = parseFloat(document.getElementById('num2').value);
 
-            let result;
+            let su1 = Number(document.getElementById("num1").value);
+            let su2 = Number(document.getElementById("num2").value);
+            let result = 0;
 
             switch(value) {
                 case '+' : 
@@ -152,14 +154,21 @@
             let content = prompt('추가할 목록을 입력하세요');
 
             // 코드 작성
-            if (content !== null && content.trim() !== ""){
+            // if (content !== null && content.trim() !== ""){
 
-            let ulElement = document.getElementById('list');
-            let liElement = document.createElement('li');
-            liElement.textContent = content;
+            // let ulElement = document.getElementById('list');
+            // let liElement = document.createElement('li');
+            // liElement.textContent = content;
 
-            ulElement.appendChild(liElement);
-            }
+            // ulElement.appendChild(liElement);
+
+            if(!content) return;
+
+            const $list = document.querySelector("#list");
+            const $li = document.createElement("li");
+            $li.textContent = content;
+            $list.appendChild($li);
+            
         }
     </script>
 
